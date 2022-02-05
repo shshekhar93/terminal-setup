@@ -1,5 +1,6 @@
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
+alias gl="git log"
+alias gcp="git cherry-pick"
 alias gcm="git commit -m"
-
