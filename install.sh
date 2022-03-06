@@ -3,7 +3,7 @@ TERM_SETUP_REPO="https://github.com/shshekhar93/terminal-setup.git"
 TERM_SETUP_DIR=".scripts"
 BASH_PROFILE=".bash_profile"
 BASHRC=".bashrc"
-GIT_PATH=$(which git0)
+GIT_PATH=$(which git)
 
 function install_git() {
     sudo apt install git
