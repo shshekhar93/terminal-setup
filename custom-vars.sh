@@ -1,8 +1,11 @@
 #!/bin/bash
 
-RED="$(tput setaf 1)"
+HOSTNAME=""
+
+RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 CYAN=$(tput setaf 6)
+PURPLE=$(tput setaf 13) 
 NC=$(tput sgr0)
 
 # Custom prompt
@@ -23,5 +26,13 @@ exit_code() {
   fi
 }
 
-export PS1="\$(exit_code) \W\$(parse_git_branch) ✗ "
+hostname() {
+  if [[ "$HOSTNAME" == "" ]]; then
+    echo ""
+  else
+    echo -e " \001${PURPLE}\002[${HOSTNAME}]\001${NC}\002"
+  fi
+}
+
+export PS1="\$(exit_code)\$(hostname) \W\$(parse_git_branch) ✗ "
 
